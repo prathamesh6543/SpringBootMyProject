@@ -7,16 +7,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "bankdetails1")
+@Table(name = "bankdetails")
 public class BankDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String bankaccountnumber;
 	private String bankname;
+	private String bankaccountnumber;
 	private String routingnumber;
 	private String chequenumber;
 	private String additionalinformation;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getBankname() {
 		return bankname;
@@ -56,14 +64,6 @@ public class BankDetails {
 
 	public void setAdditionalinformation(String additionalinformation) {
 		this.additionalinformation = additionalinformation;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 }
